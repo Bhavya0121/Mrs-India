@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+:root {
+  --black: #0a0507;
+  --black-soft: #14080c;
+  --black-warm: #1a0f12;
+  --gold: #c9a961;
+  --gold-bright: #e8c988;
+  --gold-deep: #8b6f38;
+  --maroon: #5c1428;
+  --crimson: #8b1a2e;
+  --cream: #ebe4d6;
+  --cream-muted: #9d8d85;
+  --line: rgba(201, 169, 97, 0.15);
+  --line-strong: rgba(201, 169, 97, 0.35);
+}
+
+@theme inline {
+  --color-black: var(--black);
+  --color-black-soft: var(--black-soft);
+  --color-black-warm: var(--black-warm);
+  --color-gold: var(--gold);
+  --color-gold-bright: var(--gold-bright);
+  --color-gold-deep: var(--gold-deep);
+  --color-cream: var(--cream);
+  --color-cream-muted: var(--cream-muted);
+  --color-crimson: var(--crimson);
+  --font-serif: var(--font-serif), "Cormorant Garamond", serif;
+  --font-sans: var(--font-sans), "Outfit", system-ui, sans-serif;
+  --font-script: var(--font-script), "Pinyon Script", cursive;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  background: var(--black);
+  color: var(--cream);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Marquee */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee-scroll 35s linear infinite;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Native date input dark scheme */
+input[type="date"] {
+  color-scheme: dark;
+}
+
+/* Custom dark select arrow */
+.select-dark {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3e%3cpath fill='%23C9A961' d='M0 0l5 6 5-6z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+/* FAQ animation */
+details.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+}
+details.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+details.faq-item[open] .faq-toggle {
+  transform: rotate(45deg);
+  background: var(--gold);
+  color: var(--black);
+}

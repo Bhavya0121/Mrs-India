@@ -1,0 +1,32 @@
+import type { ApplicationStatus } from "@/models/Application";
+
+export type SerializedApplication = {
+  _id: string;
+  reference?: string;
+  full_name: string;
+  dob?: string;
+  marital_status?: string;
+  nationality?: string;
+  email: string;
+  phone?: string;
+  city?: string;
+  state?: string;
+  category?: string;
+  height?: string;
+  profession?: string;
+  instagram?: string;
+  languages?: string;
+  about?: string;
+  achievements?: string;
+  headshot_url?: string;
+  fullbody_url?: string;
+  emergency_name?: string;
+  emergency_phone?: string;
+  source?: string;
+  terms_accepted?: boolean;
+  fee_amount?: number;
+  payment_status?: string;
+  status: ApplicationStatus;
+  createdAt: string;
+  updatedAt: string;
+};

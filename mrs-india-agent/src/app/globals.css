@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0d0608;
+  --surface: #181013;
+  --surface-2: #221620;
+  --surface-3: #2e1f28;
+  --border: rgba(201, 169, 97, 0.12);
+  --border-strong: rgba(201, 169, 97, 0.28);
+  --text: #ebe4d6;
+  --text-muted: #948880;
+  --text-dim: #5e5650;
+  --gold: #c9a961;
+  --gold-bright: #e8c988;
+  --gold-deep: #8b6f38;
+  --success: #5fb777;
+  --success-bg: rgba(95, 183, 119, 0.12);
+  --warning: #e0a458;
+  --warning-bg: rgba(224, 164, 88, 0.12);
+  --danger: #d87171;
+  --danger-bg: rgba(216, 113, 113, 0.12);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-text-dim: var(--text-dim);
+  --color-gold: var(--gold);
+  --color-gold-bright: var(--gold-bright);
+  --color-gold-deep: var(--gold-deep);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+  --animate-fade-in: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--surface-3);
+}
+
+.font-serif {
+  font-family: var(--font-serif), "Times New Roman", serif;
+}
+
+.badge-dot::before {
+  content: "•";
+  font-size: 14px;
+  line-height: 0;
+  margin-right: 6px;
+}
